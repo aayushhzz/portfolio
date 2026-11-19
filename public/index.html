@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/styles.css?v=5" />
+  <link rel="stylesheet" href="/styles.css?v=6" />
 </head>
 <body>
   <div class="grain" aria-hidden="true"></div>
@@ -110,7 +110,7 @@
     <section id="index" class="section">
       <div class="section-head">
         <h2 class="reveal">All<br />Projects</h2>
-        <p class="section-note reveal">Everything I've built or contributed to. Private ones don't have a public link.</p>
+        <p class="section-note reveal">Everything I've built or contributed to, with links to the code.</p>
       </div>
 
       <div class="filters reveal" role="group" aria-label="Filter projects">
@@ -129,8 +129,8 @@
         <li data-cat="ai"><a href="https://github.com/aayushhzz/ai-engineering/tree/main/agents/incident-triage" target="_blank" rel="noopener"><span class="r-name">Incident-triage agent</span><span class="r-desc">Pulls logs, metrics, traces and past RCAs over read-only MCP and writes a cited root-cause report</span><span class="r-tag">Python · MCP</span><span class="r-go" aria-hidden="true">↗</span></a></li>
         <li data-cat="ai"><a href="https://github.com/aayushhzz/ai-engineering/tree/main/agents/autodev" target="_blank" rel="noopener"><span class="r-name">autodev</span><span class="r-desc">Seven stage agents that turn assigned issues into draft PRs, with guardrails in code</span><span class="r-tag">Python · Codex SDK</span><span class="r-go" aria-hidden="true">↗</span></a></li>
         <li data-cat="ai"><a href="https://github.com/aayushhzz/ai-engineering/tree/main/agents/issue-assignment" target="_blank" rel="noopener"><span class="r-name">Issue-assignment agent</span><span class="r-desc">Background runner that scores each issue's priority and effort, then routes it to the right coding agent</span><span class="r-tag">Python · Codex SDK</span><span class="r-go" aria-hidden="true">↗</span></a></li>
-        <li data-cat="ai"><div class="r-private"><span class="r-name">Codex × LangGraph orchestrator</span><span class="r-desc">Planner, approval gate and specialist Codex workers in isolated worktrees</span><span class="r-tag">Python · LangGraph</span><span class="r-lock">Private</span></div></li>
-        <li data-cat="ai"><div class="r-private"><span class="r-name">Agentic Research Scraper</span><span class="r-desc">Scheduled pipeline that wrote 345 source-cited notes on leading AI researchers</span><span class="r-tag">Python · Ollama</span><span class="r-lock">Private</span></div></li>
+        <li data-cat="ai"><a href="https://github.com/aayushhzz/codex-langgraph" target="_blank" rel="noopener"><span class="r-name">Codex × LangGraph orchestrator</span><span class="r-desc">Planner, approval gate and specialist Codex workers in isolated worktrees</span><span class="r-tag">Python · LangGraph</span><span class="r-go" aria-hidden="true">↗</span></a></li>
+        <li data-cat="ai"><a href="https://github.com/aayushhzz/agentic-web-scraper" target="_blank" rel="noopener"><span class="r-name">Agentic Research Scraper</span><span class="r-desc">Scheduled pipeline that wrote 345 source-cited notes on leading AI researchers</span><span class="r-tag">Python · Ollama</span><span class="r-go" aria-hidden="true">↗</span></a></li>
 
         <!-- Tooling & infra -->
         <li data-cat="infra"><a href="https://github.com/aayushhzz/hexagon-ci" target="_blank" rel="noopener"><span class="r-name">Hexagon CI</span><span class="r-desc">Runs only the tests a PR can reach, using static call graphs</span><span class="r-tag">Go · Python</span><span class="r-go" aria-hidden="true">↗</span></a></li>
@@ -155,7 +155,7 @@
         <li data-cat="hack"><a href="https://github.com/aayushhzz/Aurora_Euclid_Hackathon" target="_blank" rel="noopener"><span class="r-name">Aurora Euclid Hackathon</span><span class="r-desc">Hackathon build</span><span class="r-tag">JavaScript</span><span class="r-go" aria-hidden="true">↗</span></a></li>
 
         <!-- Side projects (lowest priority) -->
-        <li data-cat="ai"><div class="r-private"><span class="r-name">Job Hunt Agents</span><span class="r-desc">Four long-running agents that scout roles, map companies and coach the search</span><span class="r-tag">Python · Claude</span><span class="r-lock">Private</span></div></li>
+        <li data-cat="ai"><a href="https://github.com/aayushhzz/job-hunt-agents" target="_blank" rel="noopener"><span class="r-name">Job Hunt Agents</span><span class="r-desc">Four long-running agents that scout roles, map companies and coach the search</span><span class="r-tag">Python · Claude</span><span class="r-go" aria-hidden="true">↗</span></a></li>
       </ul>
     </section>
 
@@ -230,6 +230,6 @@
     <p class="copyright mono">© <span id="year"></span> Aayush · Built on Cloudflare Workers</p>
   </footer>
 
-  <script src="/main.js?v=5" defer></script>
+  <script src="/main.js?v=6" defer></script>
 </body>
 </html>
