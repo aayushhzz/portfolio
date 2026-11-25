@@ -37,3 +37,21 @@ Persistent memory for maintaining `/Users/aayush/Desktop/Projects/portfolio` (li
 - Add a lightweight project count sync in JS or keep an automated check verifying `#project-rows li` matches the hero metric card and subtitle whenever repos are added.
 - Consider adding a subtle copy-email button with inline feedback in the footer alongside the `mailto:` link.
 - Periodically re-check `gh repo list` for newly published repos or newly merged OSS PRs.
+
+---
+
+## 2026-11-26 — EXIF-Stripped Hero Photo, Bangalore Location, & Interactive Canvas Graphs (v9)
+
+### What Changed
+- **Hero portrait (`/picture.jpg`)**: Resized uploaded photo (`960px` max) with `sips` and byte-stripped all JPEG metadata segments (`0xe1` EXIF/XMP, `0xed` IPTC, `0xe2` ICC), verifying 0 metadata markers remain. Saved as generic `/public/picture.jpg` (280 KB) and framed in full color with `object-position: 50% 18%` and cursor-tracked specular sheen.
+- **Location**: Updated hero portrait tag (`BANGALORE · IN`), intro metadata (`Bangalore, India`), and footer (`Bangalore, India`).
+- **Interactive Featured Card Graphs (`<canvas class="card-viz">`)**: Replaced static CSS mini-viz elements with 4 full-bleed DPR-scaled interactive canvases reacting to both pointer movement and scroll progress (pausing off-screen via `IntersectionObserver`, rendering static frames under `prefers-reduced-motion`):
+  1. `pipeline` (`autodev`): 7-stage PR pipeline with pointer-selected stage highlighting, live throughput bars, and traveling packets.
+  2. `radar` (`Incident Triage Agent`): 6+ MCP orbiting source radar whose sweep beam aims at the pointer and lights up citation links.
+  3. `dag` (`Personal AI OS`): Multi-agent DAG with pointer attraction and traveling event pulses across Go/SQLite/Ollama/Swift/CDP nodes.
+  4. `callgraph` (`Hexagon CI`): Go AST call-graph pruner that dims unreachable nodes on hover/scroll while illuminating the continuous diff-to-test paths to the 2 affected tests.
+- **Global Mouse & Scroll Interactivity**: Added multi-layer mouse/scroll parallax on hero heading, portrait, and footer `AAYUSH` watermark; click ripples + scroll-velocity boost on `#hero-net`; cursor spotlights on `.metric` cards; magnetic pull on `.nav-cta`, `.btn`, `.to-top`; and horizontal depth parallax on footer cityscape layers.
+- **Cache busting**: Bumped `styles.css?v=8` → `?v=9` and `main.js?v=8` → `?v=9`.
+
+### Visual Polish Note
+- In Card 04 (`callgraph`), distance-threshold edges (`d < 0.24`) missed diagonal steps (`~0.241`) between hit nodes; fixed by defining explicit continuous root-to-test hit edges `[0→7→14→15/22/23]` so the pruned emerald path reads cleanly at a glance.
