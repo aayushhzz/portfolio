@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/styles.css?v=7" />
+  <link rel="stylesheet" href="/styles.css?v=8" />
 </head>
 <body>
   <div class="scroll-progress" aria-hidden="true"><span></span></div>
@@ -144,8 +144,8 @@
             <span class="project-title">Personal AI OS</span>
             <span class="project-go" aria-hidden="true">↗</span>
           </a>
-          <p>Local-first multi-agent OS and Swarm Command Center for Apple Silicon, pairing a Go control plane and SQLite event journal with live agent orchestration.</p>
-          <p class="mono">Go · SQLite · Multi-agent</p>
+          <p>Local-first multi-agent OS for Apple Silicon: Go control plane (Chi), SQLite WAL+FTS5 event journal, P0–P3 Ollama/MLX scheduler, and Swift macOS bridge.</p>
+          <p class="mono">Go · SQLite · Swift · Multi-agent</p>
         </article>
 
         <article class="project reveal" data-tilt>
@@ -174,46 +174,47 @@
 
       <div class="index-controls reveal">
         <div class="filters" role="group" aria-label="Filter projects">
-          <button type="button" class="filter is-active" data-filter="all">All <sup></sup></button>
-          <button type="button" class="filter" data-filter="ai">AI &amp; Agents <sup></sup></button>
-          <button type="button" class="filter" data-filter="infra">Tooling &amp; Infra <sup></sup></button>
-          <button type="button" class="filter" data-filter="apps">Apps &amp; Tools <sup></sup></button>
-          <button type="button" class="filter" data-filter="web3">Web3 &amp; Open Source <sup></sup></button>
-          <button type="button" class="filter" data-filter="hack">Hackathons <sup></sup></button>
+          <button type="button" class="filter is-active" data-filter="all" aria-pressed="true">All <sup></sup></button>
+          <button type="button" class="filter" data-filter="ai" aria-pressed="false">AI &amp; Agents <sup></sup></button>
+          <button type="button" class="filter" data-filter="infra" aria-pressed="false">Tooling &amp; Infra <sup></sup></button>
+          <button type="button" class="filter" data-filter="apps" aria-pressed="false">Apps &amp; Tools <sup></sup></button>
+          <button type="button" class="filter" data-filter="web3" aria-pressed="false">Web3 &amp; Open Source <sup></sup></button>
+          <button type="button" class="filter" data-filter="hack" aria-pressed="false">Hackathons <sup></sup></button>
         </div>
         <div class="search-wrap">
           <input id="project-search" type="search" placeholder="Filter by tech or name (e.g. rust, mcp, cuda)..." aria-label="Search projects" />
+          <kbd class="search-kbd" aria-hidden="true">/</kbd>
         </div>
       </div>
 
       <ul class="rows" id="project-rows">
         <!-- AI & agents -->
-        <li data-cat="ai"><a href="https://github.com/aayushhzz/personal-ai-os" target="_blank" rel="noopener"><span class="r-name">Personal AI OS</span><span class="r-desc">Local-first multi-agent operating system and Swarm Command Center for Apple Silicon</span><span class="r-tag">Go · SQLite</span><span class="r-go" aria-hidden="true">↗</span></a></li>
-        <li data-cat="ai"><a href="https://github.com/aayushhzz/engram" target="_blank" rel="noopener"><span class="r-name">Engram</span><span class="r-desc">Local vector memory for Claude Code indexing notes, chats and GitHub markdown</span><span class="r-tag">Python · Vector DB</span><span class="r-go" aria-hidden="true">↗</span></a></li>
-        <li data-cat="ai"><a href="https://github.com/aayushhzz/harness2-lite" target="_blank" rel="noopener"><span class="r-name">harness2-lite</span><span class="r-desc">Propose–Probe–Compose harness evolution on a frozen model with an evidence library</span><span class="r-tag">Python · Agent evals</span><span class="r-go" aria-hidden="true">↗</span></a></li>
-        <li data-cat="ai"><a href="https://github.com/aayushhzz/harness-builder" target="_blank" rel="noopener"><span class="r-name">harness-builder</span><span class="r-desc">Automated agent harness builder across Claude Code, Agent SDK and Managed Agents</span><span class="r-tag">Python · Agent SDK</span><span class="r-go" aria-hidden="true">↗</span></a></li>
-        <li data-cat="ai"><a href="https://github.com/aayushhzz/rlm-mini" target="_blank" rel="noopener"><span class="r-name">rlm-mini</span><span class="r-desc">Recursive Language Model harness with a continual harness over a Jupyter kernel</span><span class="r-tag">Python · Jupyter</span><span class="r-go" aria-hidden="true">↗</span></a></li>
-        <li data-cat="ai"><a href="https://github.com/aayushhzz/lean-agent" target="_blank" rel="noopener"><span class="r-name">lean-agent</span><span class="r-desc">Stateless, constant-context CLI task agent powered by the Claude API</span><span class="r-tag">Python · Claude API</span><span class="r-go" aria-hidden="true">↗</span></a></li>
-        <li data-cat="ai"><a href="https://github.com/aayushhzz/prerouter-lab" target="_blank" rel="noopener"><span class="r-name">prerouter-lab</span><span class="r-desc">Edge0-style trained routing prediction for SSD-streamed MoE experts on Apple Silicon</span><span class="r-tag">Python · MLX</span><span class="r-go" aria-hidden="true">↗</span></a></li>
-        <li data-cat="ai"><a href="https://github.com/aayushhzz/jev-lite" target="_blank" rel="noopener"><span class="r-name">jev-lite</span><span class="r-desc">Stdlib-only local System-One decision API and confidence cascade on Ollama</span><span class="r-tag">Python · Ollama</span><span class="r-go" aria-hidden="true">↗</span></a></li>
-        <li data-cat="ai"><a href="https://github.com/aayushhzz/econ-wrap" target="_blank" rel="noopener"><span class="r-name">econ-wrap</span><span class="r-desc">Experience-driven black-box token cost control wrapper for ReAct coding agents</span><span class="r-tag">Python · Stdlib</span><span class="r-go" aria-hidden="true">↗</span></a></li>
-        <li data-cat="ai"><a href="https://github.com/aayushhzz/paper-harness" target="_blank" rel="noopener"><span class="r-name">paper-harness</span><span class="r-desc">Deterministic arXiv-to-X and dev.to publishing pipeline with verification gates</span><span class="r-tag">Python · arXiv</span><span class="r-go" aria-hidden="true">↗</span></a></li>
-        <li data-cat="ai"><a href="https://github.com/aayushhzz/article-harness" target="_blank" rel="noopener"><span class="r-name">article-harness</span><span class="r-desc">Deterministic workflow harness turning HN AI essays into grounded X threads</span><span class="r-tag">Python · Stdlib</span><span class="r-go" aria-hidden="true">↗</span></a></li>
-        <li data-cat="ai"><a href="https://github.com/aayushhzz/quorum" target="_blank" rel="noopener"><span class="r-name">Quorum</span><span class="r-desc">Multiplayer workspace where five AI engineers with isolated memory build alongside you</span><span class="r-tag">TypeScript · Workers</span><span class="r-go" aria-hidden="true">↗</span></a></li>
-        <li data-cat="ai"><a href="https://github.com/aayushhzz/mynah" target="_blank" rel="noopener"><span class="r-name">Mynah</span><span class="r-desc">Offline AI meeting notes: transcript, summary and action items on-device</span><span class="r-tag">Python · Whisper</span><span class="r-go" aria-hidden="true">↗</span></a></li>
-        <li data-cat="ai"><a href="https://github.com/aayushhzz/ai-engineering/tree/main/agents/incident-triage" target="_blank" rel="noopener"><span class="r-name">Incident-triage agent</span><span class="r-desc">Pulls logs, metrics, traces and past RCAs over read-only MCP into cited reports</span><span class="r-tag">Python · MCP</span><span class="r-go" aria-hidden="true">↗</span></a></li>
-        <li data-cat="ai"><a href="https://github.com/aayushhzz/ai-engineering/tree/main/agents/autodev" target="_blank" rel="noopener"><span class="r-name">autodev</span><span class="r-desc">Seven stage agents turning assigned issues into draft PRs with code-level guardrails</span><span class="r-tag">Python · Codex SDK</span><span class="r-go" aria-hidden="true">↗</span></a></li>
-        <li data-cat="ai"><a href="https://github.com/aayushhzz/ai-engineering/tree/main/agents/issue-assignment" target="_blank" rel="noopener"><span class="r-name">Issue-assignment agent</span><span class="r-desc">Background runner scoring issue priority and effort to route to coding agents</span><span class="r-tag">Python · Codex SDK</span><span class="r-go" aria-hidden="true">↗</span></a></li>
-        <li data-cat="ai"><a href="https://github.com/aayushhzz/codex-langgraph" target="_blank" rel="noopener"><span class="r-name">Codex × LangGraph orchestrator</span><span class="r-desc">Planner, approval gate and specialist Codex workers in isolated git worktrees</span><span class="r-tag">Python · LangGraph</span><span class="r-go" aria-hidden="true">↗</span></a></li>
-        <li data-cat="ai"><a href="https://github.com/aayushhzz/agentic-web-scraper" target="_blank" rel="noopener"><span class="r-name">Agentic Research Scraper</span><span class="r-desc">Scheduled pipeline that wrote 345 source-cited notes on AI researchers</span><span class="r-tag">Python · Ollama</span><span class="r-go" aria-hidden="true">↗</span></a></li>
+        <li data-cat="ai"><a href="https://github.com/aayushhzz/personal-ai-os" target="_blank" rel="noopener"><span class="r-name">Personal AI OS</span><span class="r-desc">Local-first multi-agent OS for Apple Silicon: Go control plane, SQLite WAL+FTS5 journal, P0–P3 Ollama/MLX scheduler</span><span class="r-tag">Go · SQLite · Swift</span><span class="r-go" aria-hidden="true">↗</span></a></li>
+        <li data-cat="ai"><a href="https://github.com/aayushhzz/engram" target="_blank" rel="noopener"><span class="r-name">Engram</span><span class="r-desc">Local vector memory for Claude Code — 80% top-1 / 95% top-3 retrieval vs 55% / 60% BM25 (MRR 0.88)</span><span class="r-tag">Python · Vector DB</span><span class="r-go" aria-hidden="true">↗</span></a></li>
+        <li data-cat="ai"><a href="https://github.com/aayushhzz/harness2-lite" target="_blank" rel="noopener"><span class="r-name">harness2-lite</span><span class="r-desc">Propose–Probe–Compose harness evolution on a frozen model; 16 synthetic tasks, 198 offline tests, strict oracle isolation</span><span class="r-tag">Python · Agent evals</span><span class="r-go" aria-hidden="true">↗</span></a></li>
+        <li data-cat="ai"><a href="https://github.com/aayushhzz/harness-builder" target="_blank" rel="noopener"><span class="r-name">harness-builder</span><span class="r-desc">Template kit scaffolding Stop-hook gates, secret-redacted JSONL traces, and permission walls for Claude agents</span><span class="r-tag">Python · Agent SDK</span><span class="r-go" aria-hidden="true">↗</span></a></li>
+        <li data-cat="ai"><a href="https://github.com/aayushhzz/rlm-mini" target="_blank" rel="noopener"><span class="r-name">rlm-mini</span><span class="r-desc">Recursive Language Model harness over a persistent Jupyter kernel; depth-2 rlm()/llm() capping corpus prompts at 3,432 chars</span><span class="r-tag">Python · Jupyter</span><span class="r-go" aria-hidden="true">↗</span></a></li>
+        <li data-cat="ai"><a href="https://github.com/aayushhzz/lean-agent" target="_blank" rel="noopener"><span class="r-name">lean-agent</span><span class="r-desc">Stateless, constant-context CLI task agent on Claude with a 300-char rolling notes buffer</span><span class="r-tag">Python · Claude API</span><span class="r-go" aria-hidden="true">↗</span></a></li>
+        <li data-cat="ai"><a href="https://github.com/aayushhzz/prerouter-lab" target="_blank" rel="noopener"><span class="r-name">prerouter-lab</span><span class="r-desc">Trained MoE routing predictor on MLX OLMoE: 0.647 held-out Recall@8 (vs 0.462 zero-shot) with 0.89 ms SSD reads</span><span class="r-tag">Python · MLX</span><span class="r-go" aria-hidden="true">↗</span></a></li>
+        <li data-cat="ai"><a href="https://github.com/aayushhzz/jev-lite" target="_blank" rel="noopener"><span class="r-name">jev-lite</span><span class="r-desc">Local Ollama decision API &amp; confidence cascade (qwen3:4b → 8b): 100% held-out accuracy with 32.2% escalated</span><span class="r-tag">Python · Ollama</span><span class="r-go" aria-hidden="true">↗</span></a></li>
+        <li data-cat="ai"><a href="https://github.com/aayushhzz/econ-wrap" target="_blank" rel="noopener"><span class="r-name">econ-wrap</span><span class="r-desc">Stdlib-only token cost controller for ReAct coding agents: 6/6 tasks passed with 10.9% fewer tokens on prune-only arm</span><span class="r-tag">Python · Stdlib</span><span class="r-go" aria-hidden="true">↗</span></a></li>
+        <li data-cat="ai"><a href="https://github.com/aayushhzz/article-harness" target="_blank" rel="noopener"><span class="r-name">article-harness</span><span class="r-desc">Zero-dependency workflow harness turning HN AI essays into grounded X threads with deterministic gates</span><span class="r-tag">Python · Stdlib</span><span class="r-go" aria-hidden="true">↗</span></a></li>
+        <li data-cat="ai"><a href="https://github.com/aayushhzz/quorum" target="_blank" rel="noopener"><span class="r-name">Quorum</span><span class="r-desc">Multiplayer chat where five AI engineers build alongside you on Workers AI (Llama 3.3), Durable Objects, and Vectorize RAG</span><span class="r-tag">TypeScript · Workers</span><span class="r-go" aria-hidden="true">↗</span></a></li>
+        <li data-cat="ai"><a href="https://github.com/aayushhzz/mynah" target="_blank" rel="noopener"><span class="r-name">Mynah</span><span class="r-desc">100% offline meeting notes on-device: local transcription, summaries, and action items</span><span class="r-tag">Python · Whisper</span><span class="r-go" aria-hidden="true">↗</span></a></li>
+        <li data-cat="ai"><a href="https://github.com/aayushhzz/ai-engineering/tree/main/agents/incident-triage" target="_blank" rel="noopener"><span class="r-name">Incident-triage agent</span><span class="r-desc">Pulls logs, metrics, traces, and past RCAs over 6+ read-only MCP servers into source-cited reports (106 tests)</span><span class="r-tag">Python · MCP</span><span class="r-go" aria-hidden="true">↗</span></a></li>
+        <li data-cat="ai"><a href="https://github.com/aayushhzz/ai-engineering/tree/main/agents/autodev" target="_blank" rel="noopener"><span class="r-name">autodev</span><span class="r-desc">Seven-stage pipeline turning assigned issues into draft PRs with 800-line diff cap and secret-scan gates</span><span class="r-tag">Python · Codex SDK</span><span class="r-go" aria-hidden="true">↗</span></a></li>
+        <li data-cat="ai"><a href="https://github.com/aayushhzz/ai-engineering/tree/main/agents/issue-assignment" target="_blank" rel="noopener"><span class="r-name">Issue-assignment agent</span><span class="r-desc">Background runner scoring issue priority and effort to route tasks to coding agents</span><span class="r-tag">Python · Codex SDK</span><span class="r-go" aria-hidden="true">↗</span></a></li>
+        <li data-cat="ai"><a href="https://github.com/aayushhzz/codex-langgraph" target="_blank" rel="noopener"><span class="r-name">Codex × LangGraph orchestrator</span><span class="r-desc">Planner (≤8 tasks), human approval gate, and specialist Codex CLI workers in isolated git worktrees</span><span class="r-tag">Python · LangGraph</span><span class="r-go" aria-hidden="true">↗</span></a></li>
+        <li data-cat="ai"><a href="https://github.com/aayushhzz/agentic-web-scraper" target="_blank" rel="noopener"><span class="r-name">Agentic Research Scraper</span><span class="r-desc">Scheduled pipeline turning public talks, papers, and repos into Obsidian notes keeping only verbatim-quoted claims</span><span class="r-tag">Python · Ollama</span><span class="r-go" aria-hidden="true">↗</span></a></li>
 
         <!-- Tooling & infra -->
-        <li data-cat="infra"><a href="https://github.com/aayushhzz/hexagon-ci" target="_blank" rel="noopener"><span class="r-name">Hexagon CI</span><span class="r-desc">Runs only the tests a PR can reach, using static Go call graphs</span><span class="r-tag">Go · Python</span><span class="r-go" aria-hidden="true">↗</span></a></li>
-        <li data-cat="infra"><a href="https://github.com/aayushhzz/gpu-blur" target="_blank" rel="noopener"><span class="r-name">gpu-blur</span><span class="r-desc">CUDA 2D image blur kernels paired with a C++17 CPU reference and verification suite</span><span class="r-tag">CUDA · C++17</span><span class="r-go" aria-hidden="true">↗</span></a></li>
-        <li data-cat="infra"><a href="https://github.com/aayushhzz/gorl" target="_blank" rel="noopener"><span class="r-name">gorl</span><span class="r-desc">Rate-limiting library with four algorithms and in-memory or Redis backends</span><span class="r-tag">Go</span><span class="r-go" aria-hidden="true">↗</span></a></li>
+        <li data-cat="infra"><a href="https://github.com/aayushhzz/hexagon-ci" target="_blank" rel="noopener"><span class="r-name">Hexagon CI</span><span class="r-desc">Deterministic Go AST call-graph test selector narrowing 2,327 go-zero roots to 10 and 2,078 in prod to 2</span><span class="r-tag">Go · Python</span><span class="r-go" aria-hidden="true">↗</span></a></li>
+        <li data-cat="infra"><a href="https://github.com/aayushhzz/gpu-blur" target="_blank" rel="noopener"><span class="r-name">gpu-blur</span><span class="r-desc">3 CUDA 2D blur kernels (naive, 16×16 shared-memory tiled, separable Gaussian) + C++17 CPU reference (8 checks)</span><span class="r-tag">CUDA · C++17</span><span class="r-go" aria-hidden="true">↗</span></a></li>
+        <li data-cat="infra"><a href="https://github.com/aayushhzz/gorl" target="_blank" rel="noopener"><span class="r-name">gorl</span><span class="r-desc">Go rate-limiting library with 4 algorithms (fixed/sliding window, token/leaky bucket) and in-memory or Redis backends</span><span class="r-tag">Go</span><span class="r-go" aria-hidden="true">↗</span></a></li>
 
         <!-- Apps & tools -->
-        <li data-cat="apps"><a href="https://github.com/aayushhzz/ScrewImazing" target="_blank" rel="noopener"><span class="r-name">ScrewImazing</span><span class="r-desc">Free CLI that exports WhatsApp chats and media from an iPhone backup</span><span class="r-tag">Python</span><span class="r-go" aria-hidden="true">↗</span></a></li>
+        <li data-cat="apps"><a href="https://github.com/aayushhzz/daily-roblox-ai" target="_blank" rel="noopener"><span class="r-name">daily-roblox-ai</span><span class="r-desc">Compiles plain-text stories into 1080×1920 30fps Roblox Studio reels via StudioMCP, OBS, and FFmpeg with content-hashed caching</span><span class="r-tag">Python · Luau</span><span class="r-go" aria-hidden="true">↗</span></a></li>
+        <li data-cat="apps"><a href="https://github.com/aayushhzz/ScrewImazing" target="_blank" rel="noopener"><span class="r-name">ScrewImazing</span><span class="r-desc">Free CLI that exports WhatsApp chats, photos, and videos from an iPhone backup onto macOS</span><span class="r-tag">Python</span><span class="r-go" aria-hidden="true">↗</span></a></li>
         <li data-cat="apps"><a href="https://github.com/aayushhzz/notes-app" target="_blank" rel="noopener"><span class="r-name">Notes App</span><span class="r-desc">Note-taking web app built with React</span><span class="r-tag">React</span><span class="r-go" aria-hidden="true">↗</span></a></li>
         <li data-cat="apps"><a href="https://github.com/aayushhzz/file-sharing-app" target="_blank" rel="noopener"><span class="r-name">File Sharing App</span><span class="r-desc">Web app for sharing files</span><span class="r-tag">JavaScript</span><span class="r-go" aria-hidden="true">↗</span></a></li>
         <li data-cat="apps"><a href="https://github.com/aayushhzz/chat-app" target="_blank" rel="noopener"><span class="r-name">Chat App</span><span class="r-desc">Web chat application</span><span class="r-tag">JavaScript</span><span class="r-go" aria-hidden="true">↗</span></a></li>
@@ -307,6 +308,6 @@
     <p class="copyright mono">© <span id="year"></span> Aayush · Built on Cloudflare Workers</p>
   </footer>
 
-  <script src="/main.js?v=7" defer></script>
+  <script src="/main.js?v=8" defer></script>
 </body>
 </html>

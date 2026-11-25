@@ -10,8 +10,9 @@
     }, { passive: true });
   }
 
-  // Scroll progress bar + hero parallax + active nav pill.
+  // Scroll progress bar (JS fallback when CSS scroll-timeline is unsupported) + hero parallax + active nav pill.
   const progressBar = document.querySelector(".scroll-progress span");
+  const nativeScrollTimeline = typeof CSS !== "undefined" && CSS.supports("animation-timeline", "scroll()");
   const mega = document.querySelector(".mega");
   const navLinks = [...document.querySelectorAll(".nav nav a[data-nav]")];
   const sections = navLinks.map((a) => document.getElementById(a.dataset.nav)).filter(Boolean);
@@ -22,8 +23,10 @@
     scrollTick = true;
     requestAnimationFrame(() => {
       const y = window.scrollY;
-      const max = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
-      if (progressBar) progressBar.style.width = `${Math.min(100, (y / max) * 100)}%`;
+      if (progressBar && !nativeScrollTimeline) {
+        const max = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+        progressBar.style.transform = `scaleX(${Math.min(1, y / max)})`;
+      }
 
       if (mega && !reduceMotion) {
         const clamped = Math.min(y, window.innerHeight);
@@ -195,10 +198,7 @@
       const catOk = activeCat === "all" || r.dataset.cat === activeCat;
       const textOk = !q || r.textContent.toLowerCase().includes(q);
       r.hidden = !(catOk && textOk);
-      if (!r.hidden) {
-        visible++;
-        r.style.animation = "none"; void r.offsetWidth; r.style.animation = "";
-      }
+      if (!r.hidden) visible++;
     });
     if (noResults) noResults.hidden = visible > 0;
   };
@@ -208,14 +208,26 @@
     btn.querySelector("sup").textContent = f === "all" ? rows.length : rows.filter((r) => r.dataset.cat === f).length;
     btn.addEventListener("click", () => {
       activeCat = f;
-      filters.forEach((b) => b.classList.toggle("is-active", b === btn));
+      filters.forEach((b) => {
+        const active = b === btn;
+        b.classList.toggle("is-active", active);
+        b.setAttribute("aria-pressed", String(active));
+      });
       applyFilter();
     });
   });
 
   searchInput?.addEventListener("input", applyFilter);
+  searchInput?.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      searchInput.value = "";
+      applyFilter();
+      searchInput.blur();
+    }
+  });
   window.addEventListener("keydown", (e) => {
-    if (e.key === "/" && document.activeElement !== searchInput && !e.metaKey && !e.ctrlKey) {
+    const tag = document.activeElement?.tagName;
+    if (e.key === "/" && tag !== "INPUT" && tag !== "TEXTAREA" && !e.metaKey && !e.ctrlKey && !e.altKey) {
       e.preventDefault();
       searchInput?.focus();
     }
@@ -276,7 +288,7 @@
     }
 
     el("rect", { x, y: top, width: w, height: h, fill, stroke, "stroke-width": sw }, g);
-    if (!layer.back && rand() > 0.5) el("line", { x1: x, y: top + 7, x2: x + w, y2: top + 7, stroke, "stroke-width": 1.2 }, g);
+    if (!layer.back && rand() > 0.5) el("line", { x1: x, y1: top + 7, x2: x + w, y2: top + 7, stroke, "stroke-width": 1.2 }, g);
 
     if (!layer.back) {
       const cols = Math.max(1, Math.floor((w - 12) / 15));
