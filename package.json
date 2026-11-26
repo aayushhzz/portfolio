@@ -5,7 +5,9 @@
   "description": "Animated personal portfolio served from Cloudflare Workers static assets",
   "scripts": {
     "dev": "wrangler dev",
-    "deploy": "wrangler deploy"
+    "deploy": "wrangler deploy",
+    "deploy:pages": "wrangler pages deploy ./public --project-name aahyouoos-portfolio --branch main",
+    "deploy:all": "npm run deploy && npm run deploy:pages"
   },
   "devDependencies": {
     "wrangler": "^4.164.0"
